@@ -18,3 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*
+|--------------------------------------------------------------------------
+| Company Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::resource('companies', 'CompaniesController', ['except' => ['show']]);
+Route::post('companies/search', [
+    'as' => 'companies.search',
+    'uses' => 'CompaniesController@search'
+]);

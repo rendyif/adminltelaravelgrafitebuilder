@@ -37,7 +37,9 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item">
+        <li class="nav-item @if(Request::is('companies', 'companies/*')) active @endif">
+            <a class="nav-link" href="{!! url('companies') !!}"><span class="fas fa-letters"></span> Company</a>
+        </li>
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
             <p>
